@@ -1,4 +1,4 @@
-# Build a Bouqt
+# Build a Bouqt 💐
 
 ## Overview
 
@@ -24,18 +24,18 @@ Owners - essential. they need to have an account to access api for data
 
 ### Features
 
-Preview component
-This will dynamically display the users selected inputs
+Preview component:
+---> This will dynamically display the users selected inputs
 
-Options component
-There will be multiple layers for the user to choose - focal, secondary and folliage for example.
-Within those layers, options will be available - lilly's, sunflowers, ferns for example.
-Focal and secondary will have the same options avilable
+Options component:
+---> There will be multiple layers for the user to choose - focal, secondary and folliage for example.
+------> Within those layers, options will be available - lilly's, sunflowers, ferns for example.
+---------> Focal and secondary will have the same options avilable
 
-Price will be displayed
-Each individual flower will show its cost
-There will be a grand total (+shipping and taxes)
-Add to cart will be the CTA
+Price will be displayed:
+---> Each individual flower will show its cost
+------> There will be a grand total (+shipping and taxes)
+---------> Add to cart will be the CTA
 
 ## Implementation
 
@@ -52,9 +52,9 @@ MySQL
 
 ### APIs
 
-List any external sources of data that will be used in your app.
 I will need to create my own API that the client can request to. In order for the app to work,
-the client will need an API key to request the flower images,
+the client will need to install the app and obtain an API key. The API key will fetch the flower
+images from the server to be displayed live on the website, based off what inventory the store has.
 
 ### Sitemap
 
