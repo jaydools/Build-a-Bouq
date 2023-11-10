@@ -62,6 +62,9 @@ List the pages of your app with brief descriptions. You can show this visually, 
 
 ### Mockups
 
+![image](./src/Assets/Mockups/mobile.jpg)
+![image](./src/Assets/Mockups/desktop.png)
+
 ### Data
 
 Describe your data and the relationships between them. You can show this visually using diagrams, or write it out.
