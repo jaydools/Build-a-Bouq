@@ -1,4 +1,4 @@
-# Build a Bouqt 💐
+# Build a Bouq 💐
 
 ## Overview
 
@@ -58,7 +58,18 @@ images from the server to be displayed live on the website, based off what inven
 
 ### Sitemap
 
-List the pages of your app with brief descriptions. You can show this visually, or write it out.
+#### Homepage
+
+---> This will be where main feature of this application will live.
+------> It will have a nav bar ontop, the builder component as the hero and then some hooks and social proof below to help secure sales
+
+### Login
+
+---> This is where customers can log in and see their order history
+
+### About
+
+---> This will be a brief description of the "company" and/or will outline the project, and why it was built
 
 ### Mockups
 
@@ -70,6 +81,14 @@ List the pages of your app with brief descriptions. You can show this visually, 
 Describe your data and the relationships between them. You can show this visually using diagrams, or write it out.
 
 ### Endpoints
+
+Get localhost:8080/ (website assets)
+Get locahost:8080/builder (builder images)
+
+(maybe)
+Get localhost:8080/inventory
+Put localhost:8080/inventory
+Get localhost:8080/login (user ID data)
 
 List endpoints that your server will implement, including HTTP methods, parameters, and example responses.
 
@@ -84,3 +103,15 @@ Scope your project as a sprint. Break down the tasks that will need to be comple
 ## Nice-to-haves
 
 Your project will be marked based on what you committed to in the above document. Under nice-to-haves, you can list any additional features you may complete if you have extra time, or after finishing.
+
+### Current considerations
+
+How to deal with store inventory
+---> Do they need to host inventory data on my server?
+------> can they send inventory data instead so its only get request?
+
+API Key
+---> How do I make one?
+
+Users
+---> Can this be the responsability of client? (as Build a Bouq is only for stores, users are stores responsability)
