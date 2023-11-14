@@ -75,6 +75,7 @@ images from the server to be displayed live on the website, based off what inven
 
 ![image](./src/Assets/Mockups/mobile.jpg)
 ![image](./src/Assets/Mockups/desktop.png)
+![image](./src/Assets/Mockups/framework.jpg)
 
 ### Data
 
