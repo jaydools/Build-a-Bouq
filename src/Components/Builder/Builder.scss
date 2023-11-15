@@ -1,0 +1,7 @@
+@use "../../Styles/global" as *;
+@use "../../Styles/mixins" as *;
+@use "../../Styles/variables" as *;
+
+.builder-container {
+    display: flex;
+}

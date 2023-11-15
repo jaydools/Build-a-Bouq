@@ -1,7 +1,12 @@
+@use "../../Styles/global" as *;
+@use "../../Styles/mixins" as *;
+@use "../../Styles/variables" as *;
+
 .navbar {
     display: flex;
     justify-content: space-between;
-    background-color: gray;
+    background-color: $white;
+    padding: 1rem;
 }
 
 .leftside {
@@ -23,5 +28,12 @@
 
     &__list-item {
         padding: 0.5rem 1rem 0.5rem 1rem;
+        color: $primary;
+
+        &:hover {
+            border-bottom: 1.5px solid $primary;
+            transition: ease-out 0.5s;
+            border-radius: $buttonRadius;
+        }
     }
 }

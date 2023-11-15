@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.scss";
+import { Link } from "react-router-dom";
 
 function Header() {
     return (
@@ -9,9 +10,18 @@ function Header() {
             </div>
             <div className="rightside">
                 <ul className="rightside__list-parent">
-                    <li className="rightside__list-item">Cart</li> {/* "Link to" this part */}
-                    <li className="rightside__list-item">About Us</li>
-                    <li className="rightside__list-item">Login</li>
+                    <li className="rightside__list-item">
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li className="rightside__list-item">
+                        <Link to="/cart">Cart</Link>
+                    </li>
+                    <li className="rightside__list-item">
+                        <Link to="/about-us">About Us</Link>
+                    </li>
+                    <li className="rightside__list-item">
+                        <Link to="/login">Login</Link>
+                    </li>
                 </ul>
             </div>
         </nav>
