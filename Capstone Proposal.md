@@ -17,10 +17,9 @@ People love building things, so this app will showcase the options available and
 
 ### User Profile
 
-Who will use your app? How will they use it? Any special considerations that your app must take into account.
-
-Customers - customer accounts? or maybe sprint 2
-Owners - essential. they need to have an account to access api for data
+Sprint 2:
+Owners - an admin account, to retrieve inventory, aquire API key, update inventory
+Customers - a user account that displays order history and holds customer info
 
 ### Features
 
@@ -58,6 +57,8 @@ images from the server to be displayed live on the website, based off what inven
 
 ### Sitemap
 
+![image](./src/Assets/Mockups/framework.jpg)
+
 #### Homepage
 
 ---> This will be where main feature of this application will live.
@@ -65,7 +66,9 @@ images from the server to be displayed live on the website, based off what inven
 
 ### Login
 
----> This is where customers can log in and see their order history
+To be implimented in sprint 2:
+---> This is where owners can log in so that they can use the app and retrieve the images.
+---> This is where users can log in so that they can see their purchase history.
 
 ### About
 
@@ -75,35 +78,48 @@ images from the server to be displayed live on the website, based off what inven
 
 ![image](./src/Assets/Mockups/mobile.jpg)
 ![image](./src/Assets/Mockups/desktop.png)
-![image](./src/Assets/Mockups/framework.jpg)
 
 ### Data
 
 Describe your data and the relationships between them. You can show this visually using diagrams, or write it out.
+For the purpose of this project, a mock inventory data file will be created and hosted on the server. This will be retrieved from and updated by actions taken on the client. The large picture is to retrieve the inventory from a store, from whereever they store it, but for now this app will use mock data.
+
+The assets of the flower images will be stored on an outside CDN server, so that the images can be quickly retrieved via a link, rather than stored on the app's server.
 
 ### Endpoints
 
-Get localhost:8080/ (website assets)
-Get locahost:8080/builder (builder images)
-
-(maybe)
 Get localhost:8080/inventory
 Put localhost:8080/inventory
-Get localhost:8080/login (user ID data)
 
-List endpoints that your server will implement, including HTTP methods, parameters, and example responses.
+Sprint 2:
+Get localhost:8080/login (user ID data)
 
 ### Auth
 
-Does your project include any login or user profile functionality? If so, describe how authentication/authorization will be implemented.
+Store owners will need to use an API key in order to retrieve the flower images.
 
 ## Roadmap
 
-Scope your project as a sprint. Break down the tasks that will need to be completed and map out timeframes for implementation. Think about what you can reasonably complete before the due date. The more detail you provide, the easier it will be to build.
+Sprint 1:
+As described in this document, a user will be able to build their custom bouqet based on the stores inventory. They will be able to see the total price and add to cart. A basic functioning web design will be implimented and become more complex in future sprints.
+
+Sprint 2:
+Impliment a login feature for both store owners (admin) and customers (users).
+Impliment an authorization factor, such as a JSON Token.
+Add more flowers to pick from.
+Users can login and see their order history.
+
+Sprint 3:
+Optimize for an app store such as Shopify.
+Transform this app into a format that will be accepted as a plug and play for currently designed websites.
 
 ## Nice-to-haves
 
-Your project will be marked based on what you committed to in the above document. Under nice-to-haves, you can list any additional features you may complete if you have extra time, or after finishing.
+-   Login feature
+-   Json token auth
+-   Better flower images
+-   More flower images
+-   A functioning cart
 
 ### Current considerations
 
@@ -115,4 +131,4 @@ API Key
 ---> How do I make one?
 
 Users
----> Can this be the responsability of client? (as Build a Bouq is only for stores, users are stores responsability)
+---> Can this be the responsability of soowner? (as Build a Bouq is only for stores, users are stores responsability)
