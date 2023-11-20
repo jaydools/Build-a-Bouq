@@ -3,6 +3,7 @@ import "./Options.scss";
 import Dropdown from "../Dropdown/Dropdown";
 import DropdownFoliage from "../DropdownFoliage/DropdownFoliage";
 import AddToCart from "../AddToCart/AddToCart";
+import DropdownContainer from "../Container/Container";
 
 function Options() {
     return (
@@ -18,7 +19,7 @@ function Options() {
                     Foliage <DropdownFoliage />
                 </div>
                 <div className="dropdown-four">
-                    Container <Dropdown />
+                    Container <DropdownContainer />
                 </div>
                 <div className="dropdown-five">
                     Add To Cart <AddToCart />
