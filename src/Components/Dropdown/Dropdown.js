@@ -6,19 +6,29 @@ import axios from "axios";
 
 function Dropdown() {
     const [isOpen, setIsOpen] = useState(false);
-    const [categories, setCategories] = useState([]); // State to store category data
+    const [primaryItems, setPrimaryItems] = useState([]); // State to store primary data
 
     useEffect(() => {
-        const fetchCategories = async () => {
+        const fetchItems = async () => {
             try {
                 const response = await axios.get("http://localhost:8080/api/inventories/");
-                setCategories(response.data); // Set the retrieved categories in state
+
+                // Filter items with category "primary"
+                const primaryItemsFiltered = response.data.filter(
+                    (item) => item.category === "primary"
+                );
+
+                // Extract "item_name" values from filtered items
+                const primaryItemNames = primaryItemsFiltered.map((item) => item.item_name);
+
+                setPrimaryItems(primaryItemNames); // Set the retrieved "item_name" values in state
             } catch (error) {
-                console.error("Error fetching categories: ", error);
+                console.error("Error fetching primary items: ", error);
             }
         };
 
-        fetchCategories(); // Call the async function to fetch categories when the component mounts
+        // Fetch all items when the component mounts
+        fetchItems();
     }, []);
 
     return (
@@ -31,11 +41,13 @@ function Dropdown() {
                 )}
             </button>
             {isOpen && (
-                <div className="dropdown__list">
-                    <ul>
-                        {/* Map over the categories and create list items for each */}
-                        {categories.map((category) => (
-                            <li key={category.id}>{category.category}</li>
+                <div className="dropdown__content">
+                    <ul className="dropdown__list">
+                        {/* Map over the primaryItems and create list items for each */}
+                        {primaryItems.map((item) => (
+                            <li className="dropdown__item" key={item}>
+                                {item}
+                            </li>
                         ))}
                     </ul>
                 </div>
