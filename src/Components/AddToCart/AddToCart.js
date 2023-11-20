@@ -6,12 +6,10 @@ import React, { useState } from "react";
 
 function AddToCart() {
     const [isOpen, setIsOpen] = useState(false);
-    const [foliageItems, setFoliageItems] = useState([]); // State to store foliage data
-    const [selectedItem, setSelectedItem] = useState(null); // State to store selected flower
+    const [selectedItem, setSelectedItem] = useState(null); // will need to add state here to add all items to cart
 
     const handleItemSelect = (item) => {
         setSelectedItem(item);
-        setIsOpen(false); // Close the dropdown menu upon selection
     };
 
     return (
