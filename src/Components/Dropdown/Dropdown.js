@@ -7,21 +7,26 @@ import axios from "axios";
 function Dropdown() {
     const [isOpen, setIsOpen] = useState(false);
     const [primaryItems, setPrimaryItems] = useState([]); // State to store primary data
+    const [selectedItem, setSelectedItem] = useState(null); // State to store selected flower
+
+    const handleItemSelect = (item) => {
+        setSelectedItem(item);
+        setIsOpen(false); // Close the dropdown menu upon selection
+    };
 
     useEffect(() => {
         const fetchItems = async () => {
             try {
-                const response = await axios.get("http://localhost:8080/api/inventories/");
+                const response = await axios.get(
+                    `${process.env.REACT_APP_BACKEND_URL}/api/inventories`
+                );
 
                 // Filter items with category "primary"
                 const primaryItemsFiltered = response.data.filter(
                     (item) => item.category === "primary"
                 );
 
-                // Extract "item_name" values from filtered items
-                const primaryItemNames = primaryItemsFiltered.map((item) => item.item_name);
-
-                setPrimaryItems(primaryItemNames); // Set the retrieved "item_name" values in state
+                setPrimaryItems(primaryItemsFiltered); // Set the retrieved items in state
             } catch (error) {
                 console.error("Error fetching primary items: ", error);
             }
@@ -33,20 +38,29 @@ function Dropdown() {
 
     return (
         <div className="dropdown">
-            <button onClick={() => setIsOpen((prev) => !prev)} className="dropdown__button">
+            <button onClick={() => setIsOpen(!isOpen)} className="dropdown__button">
                 {isOpen ? (
                     <img src={upArrow} alt="Dropdown Arrow" className="dropdown__img" />
                 ) : (
                     <img src={downArrow} alt="Dropdown Arrow" className="dropdown__img" />
                 )}
+                <span className="dropdown__names">
+                    {selectedItem ? selectedItem.item_name : "Select an item"}
+                </span>
             </button>
             {isOpen && (
                 <div className="dropdown__content">
                     <ul className="dropdown__list">
                         {/* Map over the primaryItems and create list items for each */}
                         {primaryItems.map((item) => (
-                            <li className="dropdown__item" key={item}>
-                                {item}
+                            <li
+                                key={item.id}
+                                onClick={() => handleItemSelect(item)}
+                                className={`dropdown__item ${
+                                    selectedItem === item ? "selected" : ""
+                                }`}
+                            >
+                                {selectedItem === item ? selectedItem.item_name : item.item_name}
                             </li>
                         ))}
                     </ul>

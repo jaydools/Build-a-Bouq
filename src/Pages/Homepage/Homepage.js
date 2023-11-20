@@ -4,7 +4,7 @@ import Builder from "../../Components/Builder/Builder";
 
 function Homepage() {
     return (
-        <div>
+        <div className="homepage-container">
             <Builder />
         </div>
     );
