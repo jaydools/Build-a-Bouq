@@ -2,6 +2,7 @@ import React from "react";
 import "./Options.scss";
 import Dropdown from "../Dropdown/Dropdown";
 import DropdownFoliage from "../DropdownFoliage/DropdownFoliage";
+import AddToCart from "../AddToCart/AddToCart";
 
 function Options() {
     return (
@@ -20,7 +21,7 @@ function Options() {
                     Container <Dropdown />
                 </div>
                 <div className="dropdown-five">
-                    Add To Cart <Dropdown />
+                    Add To Cart <AddToCart />
                 </div>
                 <div className="total">TOTAL:</div>{" "}
                 {/*  Insert Order Value In Here ----------------------// */}
