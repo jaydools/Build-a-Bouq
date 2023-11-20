@@ -1,6 +1,7 @@
 import React from "react";
 import "./Options.scss";
 import Dropdown from "../Dropdown/Dropdown";
+import DropdownFoliage from "../DropdownFoliage/DropdownFoliage";
 
 function Options() {
     return (
@@ -13,7 +14,7 @@ function Options() {
                     Secondary <Dropdown />
                 </div>
                 <div className="dropdown-three">
-                    Foliage <Dropdown />
+                    Foliage <DropdownFoliage />
                 </div>
                 <div className="dropdown-four">
                     Container <Dropdown />
