@@ -1,5 +1,6 @@
 import "./AddToCart.scss";
 import cart from "../../Assets/Images/cart.png";
+import success from "../../Assets/Images/success.gif";
 
 import React, { useState } from "react";
 
@@ -15,17 +16,13 @@ function AddToCart() {
 
     return (
         <div className="dropdown">
-            <button onClick={() => setIsOpen(!isOpen)} className="dropdown__button">
+            <button onClick={() => setIsOpen(!isOpen)} className="dropdown__button--2">
                 {isOpen ? (
-                    <img
-                        src="https://lottie.host/42169104-e35b-4ee8-9fb0-ae8a8539e0ed/HIBw71W4jg.json"
-                        alt="sucess"
-                        className="dropdown__img"
-                    />
+                    <img src={success} alt="sucess" className="dropdown__img--2" />
                 ) : (
-                    <img src={cart} alt="add to cart" className="dropdown__img" />
+                    <img src={cart} alt="add to cart" className="dropdown__img--2" />
                 )}
-                <span className="dropdown__names">
+                <span className="dropdown__add-cart">
                     {selectedItem ? selectedItem.item_name : "Add To Cart"}
                 </span>
             </button>
