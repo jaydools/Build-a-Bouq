@@ -13,14 +13,14 @@ function AddToCart() {
     };
 
     return (
-        <div className="dropdown">
-            <button onClick={() => setIsOpen(!isOpen)} className="dropdown__button--2">
+        <div className="cart-button">
+            <button onClick={() => setIsOpen(!isOpen)} className="cart-button__button--2">
                 {isOpen ? (
-                    <img src={success} alt="sucess" className="dropdown__img--2" />
+                    <img src={success} alt="sucess" className="cart-button__img--2" />
                 ) : (
-                    <img src={cart} alt="add to cart" className="dropdown__img--2" />
+                    <img src={cart} alt="add to cart" className="cart-button__img--2" />
                 )}
-                <span className="dropdown__add-cart">Add To Cart</span>
+                <span className="cart-button__add-cart">Order Now</span>
             </button>
         </div>
     );

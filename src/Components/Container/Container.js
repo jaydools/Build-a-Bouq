@@ -21,9 +21,9 @@ function DropdownContainer() {
                     `${process.env.REACT_APP_BACKEND_URL}/api/inventories`
                 );
 
-                // Filter items with category "container"
+                // Filter items with category "container" and exlude out of stock
                 const containerItemsFiltered = response.data.filter(
-                    (item) => item.category === "container"
+                    (item) => item.category === "container" && item.quantity > 0
                 );
 
                 setContainerItems(containerItemsFiltered); // Set the retrieved items in state

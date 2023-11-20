@@ -22,7 +22,7 @@ function Options() {
                     Container <DropdownContainer />
                 </div>
                 <div className="dropdown-five">
-                    Add To Cart <AddToCart />
+                    <AddToCart />
                 </div>
                 <div className="total">TOTAL:</div>{" "}
                 {/*  Insert Order Value In Here ----------------------// */}

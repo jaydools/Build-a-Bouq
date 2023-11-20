@@ -23,7 +23,7 @@ function DropdownFoliage() {
 
                 // Filter items with category "primary"
                 const foliageItemsFiltered = response.data.filter(
-                    (item) => item.category === "foliage"
+                    (item) => item.category === "foliage" && item.quantity > 0
                 );
 
                 setFoliageItems(foliageItemsFiltered); // Set the retrieved items in state

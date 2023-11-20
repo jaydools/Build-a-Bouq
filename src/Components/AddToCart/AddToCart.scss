@@ -1,56 +1,35 @@
 @use "../../Styles/global" as *;
 @use "../../Styles/mixins" as *;
 @use "../../Styles/variables" as *;
+@use "../../Styles/global" as *;
+@use "../../Styles/mixins" as *;
+@use "../../Styles/variables" as *;
 
-.dropdown {
-    background-color: rgba(74, 80, 67, 0.4);
+.cart-button {
+    background-color: $primary;
+    justify-content: center;
     position: relative;
     display: flex;
 
-    flex-direction: column;
     width: 60%;
     min-width: 160px;
     border-radius: $dropdown;
-    z-index: 100;
+    color: $white;
+    height: 41px;
 
-    &:active {
-        outline: 2.5px solid $primary;
-    }
     &:hover {
-        background-color: $primary;
+        background-color: $white;
+        color: black;
+        outline: 2px solid $primary;
     }
 
     &__img--2 {
-        padding-left: 1rem;
         height: 20px;
-        margin-top: 0.5rem;
-    }
-    &__content {
-        align-content: center;
-    }
-
-    &__item {
-        padding: 0.5rem;
-        text-align: center;
-        border-top: 1px solid $white;
-        @include desktopP2;
-    }
-    &__item:hover {
-        background-color: $white;
-        outline: 2.5px solid $primary;
+        margin-top: 0.4rem;
+        padding-right: 0.5rem;
     }
 
     &__add-cart {
         @include desktopH2;
-        padding-left: 1rem;
-    }
-
-    &__button--2 {
-        border: 2px solid transparent;
-        transition: outline 0.4s ease;
-
-        &:focus {
-            outline: 5px solid $white; // Change border color on click
-        }
     }
 }

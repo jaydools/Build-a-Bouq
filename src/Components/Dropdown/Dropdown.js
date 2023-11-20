@@ -23,7 +23,7 @@ function Dropdown() {
 
                 // Filter items with category "primary"
                 const primaryItemsFiltered = response.data.filter(
-                    (item) => item.category === "primary"
+                    (item) => item.category === "primary" && item.quantity > 0
                 );
 
                 setPrimaryItems(primaryItemsFiltered); // Set the retrieved items in state
