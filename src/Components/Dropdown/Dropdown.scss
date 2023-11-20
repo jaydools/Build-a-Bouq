@@ -1,0 +1,26 @@
+@use "../../Styles/global" as *;
+@use "../../Styles/mixins" as *;
+@use "../../Styles/variables" as *;
+
+.dropdown {
+    background-color: rgba(74, 80, 67, 0.4);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 50%;
+    border-radius: $dropdown;
+
+    &:active {
+        outline: 2.5px solid $primary;
+    }
+    &:hover {
+        background-color: $primary;
+    }
+
+    &__img {
+        padding: 0.25rem;
+        height: 30px;
+        margin-right: 1rem;
+    }
+}
