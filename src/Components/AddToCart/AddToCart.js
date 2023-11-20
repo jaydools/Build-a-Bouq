@@ -22,28 +22,8 @@ function AddToCart() {
                 ) : (
                     <img src={cart} alt="add to cart" className="dropdown__img--2" />
                 )}
-                <span className="dropdown__add-cart">
-                    {selectedItem ? selectedItem.item_name : "Add To Cart"}
-                </span>
+                <span className="dropdown__add-cart">Add To Cart</span>
             </button>
-            {isOpen && (
-                <div className="dropdown__content">
-                    <ul className="dropdown__list">
-                        {/* Map over the foliageItems and create list items for each */}
-                        {foliageItems.map((item) => (
-                            <li
-                                key={item.id}
-                                onClick={() => handleItemSelect(item)}
-                                className={`dropdown__item ${
-                                    selectedItem === item ? "selected" : ""
-                                }`}
-                            >
-                                {selectedItem === item ? selectedItem.item_name : item.item_name}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            )}
         </div>
     );
 }

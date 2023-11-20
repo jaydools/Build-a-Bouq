@@ -44,4 +44,13 @@
         @include desktopH2;
         padding-left: 1rem;
     }
+
+    &__button--2 {
+        border: 2px solid transparent;
+        transition: outline 0.4s ease;
+
+        &:focus {
+            outline: 5px solid $white; // Change border color on click
+        }
+    }
 }
