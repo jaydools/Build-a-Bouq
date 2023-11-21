@@ -2,15 +2,19 @@
 @use "../../Styles/mixins" as *;
 @use "../../Styles/variables" as *;
 
-.presenter {
+.image-container {
     background-color: $white;
     padding: 2rem;
     border: 3px solid black;
     height: 75vh;
     width: 48vw;
-}
 
-.placeholder {
-    border: 1px solid peru;
-    height: 100%;
+    &__container {
+        border: 1px solid pink;
+    }
+
+    &__image {
+        height: 200px;
+        border: 1px solid aqua;
+    }
 }

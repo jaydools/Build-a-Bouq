@@ -3,15 +3,19 @@ import React, { useEffect, useState } from "react";
 import upArrow from "../../Assets/Images/up-arrow.svg";
 import downArrow from "../../Assets/Images/down-arrow.svg";
 import axios from "axios";
+import { useImages } from "../../Components/Context/ImageContext";
 
 function Dropdown() {
     const [isOpen, setIsOpen] = useState(false);
     const [primaryItems, setPrimaryItems] = useState([]); // State to store primary data
     const [selectedItem, setSelectedItem] = useState(null); // State to store selected flower
+    const { setImages } = useImages(); // Get the setImages function from context
 
     const handleItemSelect = (item) => {
         setSelectedItem(item);
         setIsOpen(false); // Close the dropdown menu upon selection
+        setImages(item.images); // grab each image url
+        console.log(item.images);
     };
 
     useEffect(() => {
