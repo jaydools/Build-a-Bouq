@@ -4,6 +4,7 @@ import Dropdown from "../Dropdown/Dropdown";
 import DropdownFoliage from "../DropdownFoliage/DropdownFoliage";
 import AddToCart from "../AddToCart/AddToCart";
 import DropdownContainer from "../Container/Container";
+import DropdownSecondary from "../DropdownSecondary/DropdownSecondary";
 
 function Options() {
     return (
@@ -13,7 +14,7 @@ function Options() {
                     Focal <Dropdown />
                 </div>
                 <div className="dropdown-two">
-                    Secondary <Dropdown />
+                    Secondary <DropdownSecondary />
                 </div>
                 <div className="dropdown-three">
                     Foliage <DropdownFoliage />

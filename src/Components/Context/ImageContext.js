@@ -5,7 +5,12 @@ const ImageContext = createContext();
 export const useImages = () => useContext(ImageContext);
 
 export const ImageProvider = ({ children }) => {
-    const [images, setImages] = useState([]);
+    const [images, setImages] = useState({
+        focal: [],
+        secondary: [],
+        foliage: [],
+        container: [],
+    });
 
     return <ImageContext.Provider value={{ images, setImages }}>{children}</ImageContext.Provider>;
 };

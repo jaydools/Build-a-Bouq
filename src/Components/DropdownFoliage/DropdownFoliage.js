@@ -9,12 +9,15 @@ function DropdownFoliage() {
     const [isOpen, setIsOpen] = useState(false);
     const [foliageItems, setFoliageItems] = useState([]); // State to store foliage data
     const [selectedItem, setSelectedItem] = useState(null); // State to store selected flower
-    const { setImages } = useImages(); // Get the setImages function from context
+    const { images, setImages } = useImages(); // Get the setImages function from context and destructure
 
     const handleItemSelect = (item) => {
         setSelectedItem(item);
         setIsOpen(false); // Close the dropdown menu upon selection
-        setImages(item.images); // grab each image url
+        setImages({
+            ...images,
+            foliage: item.images,
+        }); // grab each image url
     };
 
     useEffect(() => {

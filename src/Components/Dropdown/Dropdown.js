@@ -9,12 +9,16 @@ function Dropdown() {
     const [isOpen, setIsOpen] = useState(false);
     const [primaryItems, setPrimaryItems] = useState([]); // State to store primary data
     const [selectedItem, setSelectedItem] = useState(null); // State to store selected flower
-    const { setImages } = useImages(); // Get the setImages function from context
+    const { images, setImages } = useImages(); // Get the setImages function from context and destructure
 
     const handleItemSelect = (item) => {
         setSelectedItem(item);
         setIsOpen(false); // Close the dropdown menu upon selection
-        setImages(item.images); // grab each image url
+        setImages((prevImages) => ({
+            ...prevImages,
+            focal: item.images,
+        })); // grab each image url
+        console.log(item.images); ///////////////////////// shows up when dropdown item is selected
     };
 
     useEffect(() => {
@@ -30,6 +34,7 @@ function Dropdown() {
                 );
 
                 setPrimaryItems(primaryItemsFiltered); // Set the retrieved items in state
+                console.log(primaryItemsFiltered); //////////////////////////////////////////////////////////////
             } catch (error) {
                 console.error("Error fetching primary items: ", error);
             }
