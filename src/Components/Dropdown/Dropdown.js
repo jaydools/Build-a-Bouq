@@ -15,7 +15,6 @@ function Dropdown() {
         setSelectedItem(item);
         setIsOpen(false); // Close the dropdown menu upon selection
         setImages(item.images); // grab each image url
-        console.log(item.images);
     };
 
     useEffect(() => {
