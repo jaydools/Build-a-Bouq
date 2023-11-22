@@ -8,13 +8,21 @@
     border: 3px solid black;
     height: 75vh;
     width: 48vw;
+    position: relative;
 
     &__container {
         border: 1px solid pink;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
 
     &__image {
-        height: 200px;
         border: 1px solid aqua;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
     }
 }
