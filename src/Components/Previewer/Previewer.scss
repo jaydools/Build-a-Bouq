@@ -6,7 +6,6 @@
     background-color: $white;
     padding: 2rem;
     border: 3px solid black;
-    height: 75vh;
     width: 48vw;
     position: relative;
 
@@ -22,7 +21,5 @@
     &__image {
         border: 1px solid aqua;
         width: 100%;
-        height: auto;
-        object-fit: cover;
     }
 }
