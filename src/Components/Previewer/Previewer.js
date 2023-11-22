@@ -11,10 +11,16 @@ function Previewer() {
         ...images.container,
     ];
 
+    const zIndexRando = () => Math.floor(Math.random() * 100); // function to create a random z index
+
     return (
         <div className="image-container">
             {allImages.map((url, index) => (
-                <div key={index} className="image-container__container" style={{ zIndex: index }}>
+                <div
+                    key={index}
+                    className="image-container__container"
+                    style={{ zIndex: zIndexRando() }}
+                >
                     <img className="image-container__image" src={url} alt={`Preview ${index}`} />
                 </div>
             ))}

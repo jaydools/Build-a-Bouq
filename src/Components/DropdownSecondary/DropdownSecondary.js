@@ -56,7 +56,7 @@ function Dropdown() {
             {isOpen && (
                 <div className="dropdown__content">
                     <ul className="dropdown__list">
-                        {/* Map over the primaryItems and create list items for each */}
+                        {/* Map over the secondaryItems and create list items for each */}
                         {secondaryItems.map((item) => (
                             <li
                                 key={item.id}
