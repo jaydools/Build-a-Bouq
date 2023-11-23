@@ -32,9 +32,9 @@ Options component:
 ---------> Focal and secondary will have the same options avilable
 
 Price will be displayed:
----> Each individual flower will show its cost
-------> There will be a grand total (+shipping and taxes)
----------> Add to cart will be the CTA
+---> Each flowers cost will be fetched from the inventory database built on the backend
+------> There will be a grand total displayed (+shipping and taxes)
+---------> Order Now will be the CTA
 
 ## Implementation
 
@@ -42,12 +42,16 @@ Price will be displayed:
 
 List technologies that will be used in your app, including any libraries to save time or provide more functionality. Be sure to research any potential limitations.
 HTML
+CSS
 SCSS
+NPM
 REACT
 AXIOS
 NODE
 EXPRESS
 MySQL
+Github
+Cloudinary
 
 ### APIs
 
@@ -67,8 +71,8 @@ images from the server to be displayed live on the website, based off what inven
 ### Login
 
 To be implimented in sprint 2:
----> This is where owners can log in so that they can use the app and retrieve the images.
----> This is where users can log in so that they can see their purchase history.
+---> This is where owners can log in so that they can manage their subscription.
+---> This is where users can log in so that they can see their purchase history. (although in theory, this should be handled by the store, as this is supposed to be an app that a store can install to their existing website)
 
 ### About
 
@@ -81,7 +85,6 @@ To be implimented in sprint 2:
 
 ### Data
 
-Describe your data and the relationships between them. You can show this visually using diagrams, or write it out.
 For the purpose of this project, a mock inventory data file will be created and hosted on the server. This will be retrieved from and updated by actions taken on the client. The large picture is to retrieve the inventory from a store, from whereever they store it, but for now this app will use mock data.
 
 The assets of the flower images will be stored on an outside CDN server, so that the images can be quickly retrieved via a link, rather than stored on the app's server.
@@ -104,10 +107,11 @@ Sprint 1:
 As described in this document, a user will be able to build their custom bouqet based on the stores inventory. They will be able to see the total price and add to cart. A basic functioning web design will be implimented and become more complex in future sprints.
 
 Sprint 2:
-Impliment a login feature for both store owners (admin) and customers (users).
-Impliment an authorization factor, such as a JSON Token.
 Add more flowers to pick from.
-Users can login and see their order history.
+Add better images to be displayed.
+Allow users to + or - a specific number of flowers when choosing options.
+Impliment a login feature for store owners to view and change their subscription.
+Impliment an authorization factor, such as a JWT.
 
 Sprint 3:
 Optimize for an app store such as Shopify.
@@ -131,4 +135,4 @@ API Key
 ---> How do I make one?
 
 Users
----> Can this be the responsability of soowner? (as Build a Bouq is only for stores, users are stores responsability)
+---> Can this be the responsability of store owner? (as Build a Bouq is only for stores, users are stores responsability)
