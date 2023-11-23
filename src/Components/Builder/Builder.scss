@@ -3,10 +3,8 @@
 @use "../../Styles/variables" as *;
 
 .builder-container {
-    @include tablet {
-        display: flex;
-        justify-content: space-between;
-        background-color: $white;
-        border: 2px solid green;
-    }
+    display: flex;
+    justify-content: space-between;
+    background-color: $white;
+    border: 2px solid green;
 }
