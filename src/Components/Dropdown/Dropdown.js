@@ -18,7 +18,6 @@ function Dropdown() {
             ...prevImages,
             focal: item.images,
         })); // grab each image url
-        console.log(item.images); ///////////////////////// shows up when dropdown item is selected
     };
 
     useEffect(() => {
@@ -34,7 +33,6 @@ function Dropdown() {
                 );
 
                 setPrimaryItems(primaryItemsFiltered); // Set the retrieved items in state
-                console.log(primaryItemsFiltered); //////////////////////////////////////////////////////////////
             } catch (error) {
                 console.error("Error fetching primary items: ", error);
             }
