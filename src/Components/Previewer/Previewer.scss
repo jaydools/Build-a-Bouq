@@ -5,12 +5,10 @@
 .image-container {
     background-color: $white;
     padding: 2rem;
-    border: 3px solid black;
     width: 48vw;
     position: relative;
 
     &__container {
-        border: 1px solid pink;
         position: absolute;
         top: 0;
         left: 0;

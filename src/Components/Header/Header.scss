@@ -6,7 +6,6 @@
     display: flex;
     justify-content: space-between;
     background-color: $white;
-    padding: 1rem;
 }
 
 .leftside {
@@ -14,7 +13,7 @@
 
     &__logo {
         display: flex;
-        padding: 0.5rem 1rem 0.5rem 1rem;
+        padding: 0 1rem 0 1rem;
     }
 }
 .rightside {
@@ -30,6 +29,9 @@
         padding: 0.5rem 1rem 0.5rem 1rem;
         color: $primary;
         margin-bottom: 1.5px;
+        display: flex;
+        align-items: end;
+        @include desktopH3;
 
         &:hover {
             border-bottom: 1.5px solid $primary;
@@ -38,4 +40,16 @@
             margin-bottom: 0;
         }
     }
+}
+
+.logo {
+    height: 90px;
+    padding-left: 1rem;
+}
+
+.cart-static {
+    height: 20px;
+    position: relative;
+    top: 0.25rem;
+    padding-left: 0.25rem;
 }
