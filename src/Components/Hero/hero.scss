@@ -1,0 +1,31 @@
+@use "../../Styles/global" as *;
+@use "../../Styles/mixins" as *;
+@use "../../Styles/variables" as *;
+
+.hero {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    bottom: 2rem;
+
+    &__img {
+        width: 100%;
+    }
+
+    &__text {
+        position: relative;
+        top: 6rem;
+        margin: 0 auto;
+        text-align: center;
+        @include mobileH1;
+        background-color: $white;
+        color: $primary;
+        border-top: 1px solid $primary;
+        border-bottom: 1px solid $primary;
+        width: 430px;
+
+        @include desktop {
+            width: 550px;
+        }
+    }
+}
