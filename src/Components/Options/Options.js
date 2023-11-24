@@ -76,8 +76,9 @@ function Options() {
                     <DropdownFoliage
                         category="foliage"
                         selected={selections.foliage}
-                        onSelectionChange={(item) => handleSelection("foliage", item)}
+                        onSelectionChange={handleSelection}
                         setImages={setImages}
+                        items={foliageItems}
                     />
                 </div>
                 <div className="dropdown-four">
@@ -85,8 +86,9 @@ function Options() {
                     <DropdownContainer
                         category="container"
                         selected={selections.container}
-                        onSelectionChange={(item) => handleSelection("container", item)}
+                        onSelectionChange={handleSelection}
                         setImages={setImages}
+                        items={containerItems}
                     />
                 </div>
                 <div className="dropdown-five">

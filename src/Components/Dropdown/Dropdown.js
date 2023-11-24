@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import upArrow from "../../Assets/Images/up-arrow.svg";
 import downArrow from "../../Assets/Images/down-arrow.svg";
+import "./Dropdown.scss";
 
 function Dropdown({ category, selected, onSelectionChange, items, setImages }) {
     const [isOpen, setIsOpen] = useState(false);
