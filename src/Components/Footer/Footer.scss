@@ -5,101 +5,124 @@
 .footer {
     display: flex;
     background-color: $primary;
-    padding: 2rem 3rem;
+    padding: 1rem;
     flex-flow: row nowrap;
     justify-content: space-between;
 
-    &__left,
-    &__right {
-        flex: 1;
+    &__right-linksright {
+        display: flex;
+        flex-direction: column;
     }
-    &__left {
-        &__logo {
-            font-size: 1.5rem;
-            padding: 0.5rem;
-            height: 40px;
-        }
-        &__text {
-            margin: 1rem 0;
-            font-size: 0.7rem;
-            width: 75%;
-            color: $white;
-        }
-        &__icons {
-            display: flex;
-            &__icon {
-                margin-right: 1.5rem;
-                width: 25px;
-                height: 25px;
-            }
+}
+.footer-left {
+    width: 30%;
+    border-right: 1px solid $white;
+
+    &__logo {
+        padding: 0.5rem;
+        height: 40px;
+    }
+
+    &__text {
+        margin: 1rem 0;
+        width: 75%;
+        color: $white;
+        padding-left: 1rem;
+        @include mobileP3;
+    }
+}
+
+.footer-icons {
+    display: flex;
+    padding-left: 1rem;
+
+    &__icon {
+        margin-right: 1rem;
+        width: 25px;
+        height: 25px;
+    }
+    &__copyright {
+        @include mobileP2;
+        padding: 0.5rem;
+        color: $white;
+    }
+}
+.footer-right {
+    @include tablet {
+        width: 40%;
+    }
+    &__heading {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.5rem;
+        padding-left: 1rem;
+    }
+
+    &__text {
+        font-size: 1rem;
+        font-weight: 600;
+        color: $white;
+        text-transform: uppercase;
+        padding-bottom: 1rem;
+    }
+
+    &__heading-box {
+        border-radius: 10px;
+        padding: 0.5rem;
+        width: 130px;
+        @include mobileP3;
+        color: $secondary;
+
+        @include tablet {
+            width: 290px;
         }
     }
-    &__right {
-        border-left: 1px solid $white;
-        padding-left: 40px;
-        &-links {
-            display: flex;
-            flex-direction: row;
-        }
-        &-linksleft {
-            display: flex;
-            flex-direction: column;
-            padding-left: 40px;
-            padding-right: 80px;
-        }
-        &-linksright {
-            display: flex;
-            flex-direction: column;
-        }
-        &__heading {
-            display: flex;
-            margin-bottom: 1.5rem;
-            &__text {
-                font-size: 1rem;
-                font-weight: 600;
-                margin: 0.5rem 3rem 0rem 0;
-                color: $white;
-                text-transform: uppercase;
-            }
 
-            &-box {
-                border-radius: 10px;
-                padding: 10px 15px;
-                width: 130px;
-                font-size: 11px;
-                color: $secondary;
-            }
+    &__heading-button {
+        color: $primary;
+        background-color: $secondary;
+        border-radius: $buttonRadius;
+        padding: 0.5rem 2rem 0.5rem 2rem;
+        margin-left: 1.5rem;
+        @include mobileP2;
 
-            &-button {
-                color: $primary;
-                background-color: $secondary;
-                border-radius: 10px;
-                padding: 10px 20px;
-                margin-left: 20px;
-                font-size: 11px;
-            }
+        @include tablet {
+            margin-left: 0;
         }
-        &__text {
-            display: flex;
-            flex-flow: row nowrap;
-            color: $white;
 
-            &__copyright {
-                font-size: 12px;
-                padding: 7px 0px;
-            }
-            &__contentleft {
-                margin-right: 2rem;
-                font-size: 13px;
-                padding: 5px 0px;
-                font-weight: 500;
-            }
-            &__contentright {
-                margin-right: 2rem;
-                font-size: 13px;
-                padding: 5px 0px;
-                font-weight: 500;
-            }
+        @include desktop {
+            margin-left: 1.5rem;
         }
+    }
+
+    &__contact {
+        display: flex;
+        flex-flow: row nowrap;
+        color: $white;
+        padding-left: 1rem;
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__linksleft {
+        display: flex;
+        flex-direction: column;
+        padding-right: 6rem;
+    }
+
+    &__content-left {
+        margin-right: 2rem;
+        padding: 5px 0px;
+        @include mobileP1;
+    }
+
+    &__content-right {
+        margin-right: 2rem;
+
+        padding: 0.5rem;
+        @include mobileP1;
     }
 }
