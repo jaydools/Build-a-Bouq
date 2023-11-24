@@ -4,22 +4,22 @@ import Cart from "./Pages/Cart/Cart";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./Components/Header/Header";
 import About from "./Pages/AboutUs/About";
-import Login from "./Pages/Login/Login";
+import { CartProvider } from "./Components/CartContext/CartContext";
+
 import Footer from "./Components/Footer/Footer";
 
 function App() {
     return (
         <div>
             <BrowserRouter>
-                <Header />
-
-                <Routes>
-                    <Route path="/" element={<Homepage />} />
-                    <Route path="/cart" element={<Cart />} />
-                    <Route path="/about-us" element={<About />} />
-                    <Route path="/login" element={<Login />} />
-                </Routes>
-
+                <CartProvider>
+                    <Header />
+                    <Routes>
+                        <Route path="/" element={<Homepage />} />
+                        <Route path="/cart" element={<Cart />} />
+                        <Route path="/about-us" element={<About />} />
+                    </Routes>
+                </CartProvider>
                 <Footer />
             </BrowserRouter>
         </div>

@@ -2,13 +2,11 @@ import "./Footer.scss";
 import twitter from "../../Assets/Images/twitter.svg";
 import facebook from "../../Assets/Images/facebook.svg";
 import instagram from "../../Assets/Images/instagram.svg";
-import logo from "../../Assets/Images/logo.svg";
 
 export default function Footer() {
     return (
         <div className="footer">
             <div className="footer-left">
-                {/* <img src={logo} className="footer-left__logo" /> */}
                 <div className="footer-left__text">
                     <p>
                         Build your custom bouquet online and know exactly what you're ordering. No
