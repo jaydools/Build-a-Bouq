@@ -1,0 +1,105 @@
+@use "../../Styles/global" as *;
+@use "../../Styles/mixins" as *;
+@use "../../Styles/variables" as *;
+
+.footer {
+    display: flex;
+    background-color: $primary;
+    padding: 2rem 3rem;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    &__left,
+    &__right {
+        flex: 1;
+    }
+    &__left {
+        &__logo {
+            font-size: 1.5rem;
+            padding: 0.5rem;
+            height: 40px;
+        }
+        &__text {
+            margin: 1rem 0;
+            font-size: 0.7rem;
+            width: 75%;
+            color: $white;
+        }
+        &__icons {
+            display: flex;
+            &__icon {
+                margin-right: 1.5rem;
+                width: 25px;
+                height: 25px;
+            }
+        }
+    }
+    &__right {
+        border-left: 1px solid $white;
+        padding-left: 40px;
+        &-links {
+            display: flex;
+            flex-direction: row;
+        }
+        &-linksleft {
+            display: flex;
+            flex-direction: column;
+            padding-left: 40px;
+            padding-right: 80px;
+        }
+        &-linksright {
+            display: flex;
+            flex-direction: column;
+        }
+        &__heading {
+            display: flex;
+            margin-bottom: 1.5rem;
+            &__text {
+                font-size: 1rem;
+                font-weight: 600;
+                margin: 0.5rem 3rem 0rem 0;
+                color: $white;
+                text-transform: uppercase;
+            }
+
+            &-box {
+                border-radius: 10px;
+                padding: 10px 15px;
+                width: 130px;
+                font-size: 11px;
+                color: $secondary;
+            }
+
+            &-button {
+                color: $primary;
+                background-color: $secondary;
+                border-radius: 10px;
+                padding: 10px 20px;
+                margin-left: 20px;
+                font-size: 11px;
+            }
+        }
+        &__text {
+            display: flex;
+            flex-flow: row nowrap;
+            color: $white;
+
+            &__copyright {
+                font-size: 12px;
+                padding: 7px 0px;
+            }
+            &__contentleft {
+                margin-right: 2rem;
+                font-size: 13px;
+                padding: 5px 0px;
+                font-weight: 500;
+            }
+            &__contentright {
+                margin-right: 2rem;
+                font-size: 13px;
+                padding: 5px 0px;
+                font-weight: 500;
+            }
+        }
+    }
+}
