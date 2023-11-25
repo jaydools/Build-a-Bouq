@@ -23,9 +23,12 @@ function Options() {
     useEffect(() => {
         const fetchData = async () => {
             try {
+                const apiKey = process.env.REACT_APP_MOCK_API_KEY;
+
                 const response = await axios.get(
-                    `${process.env.REACT_APP_BACKEND_URL}/api/inventories`
+                    `${process.env.REACT_APP_BACKEND_URL}/api/inventories?apiKey=${apiKey}`
                 );
+
                 setPrimaryItems(
                     response.data.filter((item) => item.category === "primary" && item.quantity > 0)
                 );
