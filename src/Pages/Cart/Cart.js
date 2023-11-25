@@ -1,38 +1,67 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Cart.scss";
 import { useCart } from "../../Components/CartContext/CartContext";
+import { useStripe, useElements, PaymentElement } from "@stripe/react-stripe-js";
+
+const CARD_ELEMENT_OPTIONS = {
+    style: {
+        base: {
+            color: "#32325d",
+            fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+            fontSmoothing: "antialiased",
+            fontSize: "16px",
+            "::placeholder": {
+                color: "#aab7c4",
+            },
+        },
+        invalid: {
+            color: "#fa755a",
+            iconColor: "#fa755a",
+        },
+    },
+};
 
 function Cart() {
-    const { cartItems, removeFromCart } = useCart(); // get cart items from state
+    const { cartItems, removeFromCart } = useCart();
+    const [clientSecret, setClientSecret] = useState(null);
 
-    const selections = cartItems[0] || {}; /* works with only one selection in cart */
+    const stripe = useStripe();
+    const elements = useElements();
 
-    // Extract individual selection prices
-    const { focal, secondary, foliage, container } = selections;
+    useEffect(() => {
+        const fetchClientSecret = async () => {
+            const response = await fetch(
+                `${process.env.REACT_APP_BACKEND_URL}/create-payment-intent`
+            );
+            const data = await response.json();
+            setClientSecret(data.clientSecret);
+        };
 
-    // Function to calculate the total price for each category
-    const getPrice = (item) => {
-        return item ? item.price : 0;
+        fetchClientSecret();
+    }, []);
+
+    const getPrice = (item) => (item ? item.price : 0);
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        if (!stripe || !elements) {
+            return;
+        }
+
+        const result = await stripe.confirmPayment({});
+
+        if (result.error) {
+        } else {
+        }
     };
-
-    // Get prices
-    const primaryPrice = getPrice(focal);
-    const secondaryPrice = getPrice(secondary);
-    const foliagePrice = getPrice(foliage);
-    const containerPrice = getPrice(container);
-
-    // Calculate total price
-    const totalPrice = primaryPrice + secondaryPrice + foliagePrice + containerPrice;
 
     return (
         <div className="cart-container">
             <h2 className="cart-container-header">Cart Items</h2>
 
             {cartItems.map((selections, index) => {
-                // Extract individual selection prices
                 const { focal, secondary, foliage, container } = selections;
-
-                // Calculate prices for each selection
                 const primaryPrice = getPrice(focal);
                 const secondaryPrice = getPrice(secondary);
                 const foliagePrice = getPrice(foliage);
@@ -41,8 +70,8 @@ function Cart() {
                     primaryPrice + secondaryPrice + foliagePrice + containerPrice;
 
                 return (
-                    <div className="selections">
-                        <div key={index} className="cart-item">
+                    <div key={index} className="selections">
+                        <div className="cart-item">
                             <p className="cart-items__header">Custom Bouquet {index + 1}</p>
                             {focal && (
                                 <p>
@@ -67,12 +96,7 @@ function Cart() {
                             <p className="cart-items__total">
                                 Total: ${totalSelectionPrice.toFixed(2)}
                             </p>
-                            <button
-                                className="cart-items__delete"
-                                onClick={() => removeFromCart(index)}
-                            >
-                                Remove
-                            </button>
+                            <button onClick={() => removeFromCart(index)}>Remove</button>
                         </div>
                     </div>
                 );
@@ -83,18 +107,24 @@ function Cart() {
                     Total Cart Price: $
                     {cartItems
                         .reduce((total, selections) => {
-                            const { focal, secondary, foliage, container } = selections;
                             return (
                                 total +
-                                getPrice(focal) +
-                                getPrice(secondary) +
-                                getPrice(foliage) +
-                                getPrice(container)
+                                getPrice(selections.focal) +
+                                getPrice(selections.secondary) +
+                                getPrice(selections.foliage) +
+                                getPrice(selections.container)
                             );
                         }, 0)
                         .toFixed(2)}
                 </h3>
             </div>
+
+            {clientSecret && (
+                <form onSubmit={handleSubmit}>
+                    <PaymentElement options={CARD_ELEMENT_OPTIONS} />
+                    <button disabled={!stripe}>Submit</button>
+                </form>
+            )}
         </div>
     );
 }
