@@ -4,10 +4,15 @@ import "./CartContext.scss";
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-    const [cartItems, setCartItems] = useState([]);
+    const [cartItems, setCartItems] = useState(() => {
+        const savedCartItems = localStorage.getItem("cartItems");
+        return savedCartItems ? JSON.parse(savedCartItems) : [];
+    });
 
     const addToCart = (item) => {
-        setCartItems((prevItems) => [...prevItems, item]);
+        const updatedCartItems = [...cartItems, item];
+        setCartItems(updatedCartItems);
+        localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
     };
 
     const value = { cartItems, addToCart };
