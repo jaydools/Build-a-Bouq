@@ -8,9 +8,11 @@ function Header() {
     return (
         <nav className="navbar">
             <div className="leftside">
-                <p className="leftside__logo">
-                    <img src={logo} alt="logo" className="logo" />
-                </p>
+                <div className="leftside__logo">
+                    <Link to="/">
+                        <img src={logo} alt="logo" className="logo" />
+                    </Link>
+                </div>
             </div>
             <div className="rightside">
                 <ul className="rightside__list-parent">
