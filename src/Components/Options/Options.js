@@ -66,6 +66,7 @@ function Options() {
                     />
                 </div>
                 <div className="dropdown-two">
+                    Secondary
                     <Dropdown
                         category="secondary"
                         selected={selections.secondary}
