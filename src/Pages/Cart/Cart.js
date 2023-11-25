@@ -26,7 +26,7 @@ function Cart() {
 
     return (
         <div className="cart-container">
-            <h2>Cart Items</h2>
+            <h2 className="cart-container-header">Cart Items</h2>
 
             {cartItems.map((selections, index) => {
                 // Extract individual selection prices
@@ -43,11 +43,27 @@ function Cart() {
                 return (
                     <div className="selections">
                         <div key={index} className="cart-item">
-                            <p className="cart-items__header">Item: Custom Bouquet {index + 1}</p>
-                            {focal && <p>Primary: ${primaryPrice.toFixed(2)}</p>}
-                            {secondary && <p>Secondary: ${secondaryPrice.toFixed(2)}</p>}
-                            {foliage && <p>Foliage: ${foliagePrice.toFixed(2)}</p>}
-                            {container && <p>Container: ${containerPrice.toFixed(2)}</p>}
+                            <p className="cart-items__header">Custom Bouquet {index + 1}</p>
+                            {focal && (
+                                <p>
+                                    Primary: {focal.item_name} - ${primaryPrice.toFixed(2)}
+                                </p>
+                            )}
+                            {secondary && (
+                                <p>
+                                    Secondary: {secondary.item_name} - ${secondaryPrice.toFixed(2)}
+                                </p>
+                            )}
+                            {foliage && (
+                                <p>
+                                    Foliage: {foliage.item_name} - ${foliagePrice.toFixed(2)}
+                                </p>
+                            )}
+                            {container && (
+                                <p>
+                                    Container: {container.item_name} - ${containerPrice.toFixed(2)}
+                                </p>
+                            )}
                             <p className="cart-items__total">
                                 Total: ${totalSelectionPrice.toFixed(2)}
                             </p>
