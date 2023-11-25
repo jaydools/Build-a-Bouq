@@ -1,6 +1,7 @@
 import React from "react";
 import "./Cart.scss";
 import { useCart } from "../../Components/CartContext/CartContext";
+import TempCheckout from "../../Components/TempCheckout/TempCheckout";
 
 function Cart() {
     const { cartItems, removeFromCart } = useCart(); // get cart items from state
@@ -94,6 +95,9 @@ function Cart() {
                         }, 0)
                         .toFixed(2)}
                 </h3>
+            </div>
+            <div className="temp-checkout">
+                <TempCheckout />
             </div>
         </div>
     );

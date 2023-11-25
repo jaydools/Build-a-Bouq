@@ -1,0 +1,63 @@
+@use "../../Styles/global" as *;
+@use "../../Styles/mixins" as *;
+@use "../../Styles/variables" as *;
+
+.mock-payment-form {
+    background-color: #f6f6f6;
+    padding: 1.5rem;
+    border-radius: $buttonRadius;
+
+    margin: 2rem;
+}
+
+.mock-payment-form h2 {
+    color: #32325d;
+    text-align: center;
+}
+
+.mock-payment-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #6b7c93;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.temp-button {
+    background-color: #6772e5;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.temp-button:hover {
+    background-color: #5469d4;
+}
