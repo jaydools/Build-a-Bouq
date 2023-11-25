@@ -1,0 +1,29 @@
+@use "../../Styles/global" as *;
+@use "../../Styles/mixins" as *;
+@use "../../Styles/variables" as *;
+
+.cart-container {
+    border: 1px solid palegreen;
+}
+
+.selections {
+    border: 1px solid blue;
+    padding: 1rem;
+}
+
+.cart-items {
+    &__header {
+        font-weight: bold;
+    }
+
+    &__total {
+        font-weight: bold;
+    }
+
+    &__delete {
+        color: $primary;
+        background-color: $secondary;
+        border-radius: $buttonRadius;
+        padding: 0.5rem 2rem 0.5rem 2rem;
+    }
+}

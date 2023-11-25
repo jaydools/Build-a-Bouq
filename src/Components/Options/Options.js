@@ -20,6 +20,11 @@ function Options() {
     const [foliageItems, setFoliageItems] = useState([]);
     const [containerItems, setContainerItems] = useState([]);
 
+    const getPrice = (item) => {
+        return item ? item.price : 0;
+    };
+    const totalPrice = Object.values(selections).reduce((total, item) => total + getPrice(item), 0);
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -98,8 +103,7 @@ function Options() {
                 <div className="dropdown-five">
                     <AddToCart selections={selections} />
                 </div>
-                <div className="total">TOTAL:</div>{" "}
-                {/*  Insert Order Value In Here ----------------------// */}
+                <div className="total">TOTAL: ${totalPrice.toFixed(2)}</div>
             </div>
         </div>
     );

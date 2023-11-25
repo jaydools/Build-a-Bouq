@@ -17,7 +17,17 @@ export const CartProvider = ({ children }) => {
 
     const value = { cartItems, addToCart };
 
-    return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
+    const removeFromCart = (index) => {
+        const newCartItems = cartItems.filter((_, itemIndex) => itemIndex !== index);
+        setCartItems(newCartItems);
+        localStorage.setItem("cartItems", JSON.stringify(newCartItems));
+    };
+
+    return (
+        <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
+            {children}
+        </CartContext.Provider>
+    );
 };
 
 export const useCart = () => useContext(CartContext);
