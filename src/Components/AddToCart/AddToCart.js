@@ -9,10 +9,8 @@ function AddToCart({ selections }) {
     const { addToCart } = useCart();
 
     const handleAddToCart = () => {
-        // Add items to the cart
         addToCart(selections);
 
-        // Toggle button state
         setIsOpen(!isOpen);
     };
 

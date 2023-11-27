@@ -104,7 +104,7 @@ Store owners will need to use an API key in order to retrieve the flower images.
 ## Roadmap
 
 Sprint 1:
-As described in this document, a user will be able to build their custom bouqet based on the stores inventory. They will be able to see the total price and add to cart. A basic functioning web design will be implimented and become more complex in future sprints.
+As described in this document, a user will be able to build their custom bouqet based on the stores available inventory. They will be able to see the total price and add to cart. A basic functioning web design will be implimented and become more complex in future sprints.
 
 Sprint 2:
 Add more flowers to pick from.
@@ -136,3 +136,38 @@ API Key
 
 Users
 ---> Can this be the responsability of store owner? (as Build a Bouq is only for stores, users are stores responsability)
+
+# How To Fire Up
+
+## Installation
+
+Clone the repository: https://github.com/jaydools/Build-a-Bouq
+npm install
+
+-   Axios
+-   Express
+-   React Router
+-   Sass
+
+## Configuration
+
+Create a `.env` file in the root of the project and update it with your specific settings. Use the `.env.sample` as a reference. Required variables:
+
+-   `PORT`: The port number for the local server.
+-   `REACT_APP_BACKEND_URL`: The URL of your backend server.
+-   `REACT_APP_MOCK_API_KEY`: Your mock API key.
+-   `REACT_APP_STRIPE_KEY`: Your Stripe public key for payments. (This will be implimented further in the next sprint)
+
+## Running the Application
+
+To start the application in development mode, run:
+npm start
+
+## Connecting to the Backend Server
+
+This application requires a connection to a backend server, which is developed using Express, Node.js, and Knex.
+
+1. Ensure that your backend server is running. Follow the setup instructions provided in the backend repository's README file.
+2. In your `.env` file for the React client, set `REACT_APP_BACKEND_URL` to the URL where your backend server is running. For example, if your backend is running locally on port 8080, this would be `http://localhost:8080`.
+
+Make sure that both the frontend and backend are running simultaneously for the application to work correctly.

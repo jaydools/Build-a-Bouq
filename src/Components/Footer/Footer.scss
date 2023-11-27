@@ -67,7 +67,7 @@
     }
 
     &__heading-box {
-        border-radius: 10px;
+        border-radius: $buttonRadius;
         padding: 0.5rem;
         width: 130px;
         @include mobileP3;
@@ -115,7 +115,7 @@
 
     &__content-left {
         margin-right: 2rem;
-        padding: 5px 0px;
+        padding: 0.25rem 0;
         @include mobileP1;
     }
 

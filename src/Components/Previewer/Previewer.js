@@ -4,7 +4,7 @@ import { useImages } from "../Context/ImageContext";
 import placeholder from "../../Assets/Images/placeholder.png";
 
 function Previewer() {
-    const { images } = useImages(); // Access the images from context
+    const { images } = useImages();
     const allImages = [
         ...images.focal,
         ...images.secondary,
@@ -12,7 +12,7 @@ function Previewer() {
         ...images.container,
     ];
 
-    const zIndexRando = () => Math.floor(Math.random() * 100); // function to create a random z index
+    const zIndexRando = () => Math.floor(Math.random() * 100);
 
     return (
         <div className="image-container">
@@ -31,7 +31,6 @@ function Previewer() {
                     </div>
                 ))
             ) : (
-                // Render a placeholder image if allImages is empty
                 <div className="image-container__container">
                     <img className="image-container__image" src={placeholder} alt="Placeholder" />
                 </div>

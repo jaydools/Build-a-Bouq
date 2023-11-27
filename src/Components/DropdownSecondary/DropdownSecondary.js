@@ -6,17 +6,17 @@ import { useImages } from "../../Components/Context/ImageContext";
 
 function Dropdown() {
     const [isOpen, setIsOpen] = useState(false);
-    const [secondaryItems, setSecondaryItems] = useState([]); // State to store primary data
-    const [selectedItem, setSelectedItem] = useState(null); // State to store selected flower
-    const { images, setImages } = useImages(); // Get the setImages function from context and destructure
+    const [secondaryItems, setSecondaryItems] = useState([]);
+    const [selectedItem, setSelectedItem] = useState(null);
+    const { images, setImages } = useImages();
 
     const handleItemSelect = (item) => {
         setSelectedItem(item);
-        setIsOpen(false); // Close the dropdown menu upon selection
+        setIsOpen(false);
         setImages((prevImages) => ({
             ...prevImages,
             secondary: item.images,
-        })); // grab each image url
+        }));
     };
 
     useEffect(() => {
@@ -26,18 +26,16 @@ function Dropdown() {
                     `${process.env.REACT_APP_BACKEND_URL}/api/inventories`
                 );
 
-                // Filter items with category "primary"
                 const secondaryItemsFiltered = response.data.filter(
                     (item) => item.category === "primary" && item.quantity > 0
                 );
 
-                setSecondaryItems(secondaryItemsFiltered); // Set the retrieved items in state
+                setSecondaryItems(secondaryItemsFiltered);
             } catch (error) {
                 console.error("Error fetching primary items: ", error);
             }
         };
 
-        // Fetch all items when the component mounts
         fetchItems();
     }, []);
 
@@ -56,7 +54,6 @@ function Dropdown() {
             {isOpen && (
                 <div className="dropdown__content">
                     <ul className="dropdown__list">
-                        {/* Map over the secondaryItems and create list items for each */}
                         {secondaryItems.map((item) => (
                             <li
                                 key={item.id}

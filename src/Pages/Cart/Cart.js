@@ -4,25 +4,21 @@ import { useCart } from "../../Components/CartContext/CartContext";
 import TempCheckout from "../../Components/TempCheckout/TempCheckout";
 
 function Cart() {
-    const { cartItems, removeFromCart } = useCart(); // get cart items from state
+    const { cartItems, removeFromCart } = useCart();
 
-    const selections = cartItems[0] || {}; /* works with only one selection in cart */
+    const selections = cartItems[0] || {};
 
-    // Extract individual selection prices
     const { focal, secondary, foliage, container } = selections;
 
-    // Function to calculate the total price for each category
     const getPrice = (item) => {
         return item ? item.price : 0;
     };
 
-    // Get prices
     const primaryPrice = getPrice(focal);
     const secondaryPrice = getPrice(secondary);
     const foliagePrice = getPrice(foliage);
     const containerPrice = getPrice(container);
 
-    // Calculate total price
     const totalPrice = primaryPrice + secondaryPrice + foliagePrice + containerPrice;
 
     return (
@@ -30,10 +26,8 @@ function Cart() {
             <h2 className="cart-container-header">Cart Items</h2>
 
             {cartItems.map((selections, index) => {
-                // Extract individual selection prices
                 const { focal, secondary, foliage, container } = selections;
 
-                // Calculate prices for each selection
                 const primaryPrice = getPrice(focal);
                 const secondaryPrice = getPrice(secondary);
                 const foliagePrice = getPrice(foliage);
