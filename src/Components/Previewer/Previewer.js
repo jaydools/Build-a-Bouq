@@ -31,6 +31,7 @@ function Previewer() {
                             style={{ zIndex: category === "container" ? 1000 : zIndexRando() }}
                         >
                             <img
+                                key={index}
                                 className="image-container__image"
                                 src={url}
                                 alt={`Preview ${index}`}
