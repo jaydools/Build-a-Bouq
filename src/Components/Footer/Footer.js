@@ -15,14 +15,15 @@ export default function Footer() {
                     </p>
                 </div>
                 <div className="footer-icons">
-                    <a href="https://x.com" target="_blank" rel="noreferrer">
-                        <img className="footer-icons__icon" src={twitter} alt="twitter icon" />
-                    </a>
                     <a href="https://facebook.com" target="_blank" rel="noreferrer">
                         <img className="footer-icons__icon" src={facebook} alt="facebook icon" />
                     </a>
+
                     <a href="https://instagram.com" target="_blank" rel="noreferrer">
                         <img className="footer-icons__icon" src={instagram} alt="instagram icon" />
+                    </a>
+                    <a href="https://x.com" target="_blank" rel="noreferrer">
+                        <img className="footer-icons__icon" src={twitter} alt="twitter icon" />
                     </a>
                 </div>
                 <p className="footer-icons__copyright">Copyright Jordan Dooley, 2023</p>

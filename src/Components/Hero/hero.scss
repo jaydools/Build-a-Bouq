@@ -17,14 +17,18 @@
         top: 6rem;
         margin: 0 auto;
         text-align: center;
-        @include mobileH1;
+        @include mobileH2;
         background-color: $white;
         color: $primary;
         border-top: 1px solid $primary;
         border-bottom: 1px solid $primary;
-        width: 430px;
+
+        @media (min-width: 560px) {
+            @include mobileH1;
+        }
 
         @include desktop {
+            @include desktopH1;
             width: 550px;
         }
     }

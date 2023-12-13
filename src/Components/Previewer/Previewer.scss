@@ -15,9 +15,7 @@
     }
 
     &__container {
-        padding-left: 2rem;
         position: absolute;
-        width: 90%;
 
         @include tablet {
             position: absolute;

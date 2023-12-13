@@ -1,13 +1,16 @@
 @use "../../Styles/global" as *;
 @use "../../Styles/mixins" as *;
 @use "../../Styles/variables" as *;
-
 .footer {
     display: flex;
+    flex-direction: column;
     background-color: $primary;
     padding: 1rem;
-    flex-flow: row nowrap;
-    justify-content: space-between;
+
+    @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
     &__right-linksright {
         display: flex;
@@ -15,8 +18,10 @@
     }
 }
 .footer-left {
-    width: 30%;
-    border-right: 1px solid $white;
+    @include tablet {
+        width: 40%;
+        border-right: 1px solid $white;
+    }
 
     &__logo {
         padding: 0.5rem;
@@ -28,7 +33,11 @@
         width: 75%;
         color: $white;
         padding-left: 1rem;
-        @include mobileP3;
+        @include mobileP2;
+    }
+
+    &__body {
+        padding-top: 0.5rem;
     }
 }
 
@@ -36,15 +45,14 @@
     display: flex;
     padding-left: 1rem;
 
-    &__icon {
-        margin-right: 1rem;
-        width: 25px;
-        height: 25px;
-    }
     &__copyright {
         @include mobileP2;
-        padding: 0.5rem;
+        padding: 1rem;
         color: $white;
+    }
+
+    &__icon {
+        padding: 0.5rem;
     }
 }
 .footer-right {
@@ -70,7 +78,7 @@
         border-radius: $buttonRadius;
         padding: 0.5rem;
         width: 130px;
-        @include mobileP3;
+        @include mobileP2;
         color: $secondary;
 
         @include tablet {
@@ -79,15 +87,20 @@
     }
 
     &__heading-button {
-        color: $primary;
+        color: $white;
         background-color: $secondary;
         border-radius: $buttonRadius;
         padding: 0.5rem 2rem 0.5rem 2rem;
-        margin-left: 1.5rem;
+        margin-left: 0.5rem;
         @include mobileP2;
+
+        &:hover {
+            outline: 1px solid $white;
+        }
 
         @include tablet {
             margin-left: 0;
+            margin-top: 0.5rem;
         }
 
         @include desktop {
